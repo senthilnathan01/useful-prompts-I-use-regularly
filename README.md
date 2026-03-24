@@ -45,7 +45,7 @@ This flow is for chapter-wise study and vault updates.
 - `vault_update_prompt.md`
   Use in Codex after saving the chapter export locally so Codex can update the target vault files.
 
-See [chat_with_books/README.md](/Users/tsn/projects/useful-prompts-I-use-regularly/chat_with_books/README.md) for the detailed flow.
+See [chat_with_books/README.md](chat_with_books/README.md) for the detailed flow.
 
 ### `youtube_podcast_depth_extractor.md`
 
