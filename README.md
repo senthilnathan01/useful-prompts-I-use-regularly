@@ -6,19 +6,23 @@ Reusable prompt templates for a few repeatable knowledge-work flows.
 
 - `chat_with_books/`
   Prompt set for studying a book chapter, exporting the chapter notes, and then updating a target Obsidian-style vault.
-- `youtube_podcast_depth_extractor.md`
-  Prompt for turning a YouTube video or podcast link into a detailed vault source note and related note updates.
+- `deep_summarizer_for_youtube_vids/`
+  Prompt set for creating a high-fidelity YouTube summary first, then integrating it into a knowledge vault without duplicating notes.
 
 ## Repo structure
 
 ```text
 .
+├── README.md
 ├── chat_with_books/
 │   ├── README.md
 │   ├── export_prompt.md
 │   ├── study_prompt.md
 │   └── vault_update_prompt.md
-└── youtube_podcast_depth_extractor.md
+└── deep_summarizer_for_youtube_vids/
+    ├── README.md
+    ├── summary_generation_prompt.md
+    └── vault_update_prompt.md
 ```
 
 ## How to use this repo
@@ -47,15 +51,16 @@ This flow is for chapter-wise study and vault updates.
 
 See [chat_with_books/README.md](chat_with_books/README.md) for the detailed flow.
 
-### `youtube_podcast_depth_extractor.md`
+### `deep_summarizer_for_youtube_vids/`
 
-Use this when you want Codex to process a YouTube link inside a knowledge vault repository. The prompt tells Codex to:
+This flow splits YouTube capture into two steps so the summary quality and the vault update step stay separate.
 
-- read the vault guidance files first
-- create a detailed source note under `sources/youtube/`
-- update related concept or project notes when useful
-- update the vault index and manifest
-- avoid duplicates
+- `summary_generation_prompt.md`
+  Use in ChatGPT or Claude after pasting the YouTube link and a transcript or detailed notes. It generates a dense summary plus a reusable `SOURCE_PACKET`.
+- `vault_update_prompt.md`
+  Use in Codex inside the target vault repository after pasting the prepared summary or `SOURCE_PACKET`. It updates source notes, related concept or project notes, and the vault index/manifest.
+
+See [deep_summarizer_for_youtube_vids/README.md](deep_summarizer_for_youtube_vids/README.md) for the detailed flow.
 
 ## Conventions
 
