@@ -2,6 +2,8 @@
 
 Reusable prompt templates for a few repeatable knowledge-work flows.
 
+You don't need apps! You just need good ideas, good prompts and a LLM :)
+
 ## What is in this repo
 
 - `chat_with_books/`
